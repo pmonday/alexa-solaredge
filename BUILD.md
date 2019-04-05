@@ -16,7 +16,11 @@ To set up this project:
   * `pip install requests -t .`
   * `pip install ask-sdk -t .`
 
-* modify the configuration file
+* modify the configuration file (only necessary if you are using unittests, 
+otherwise, see information in [DEPLOY](./DEPLOY.md) for how to get your
+SITE_ID and API_KEY and use it in the environment when you deploy your
+skill). If you do want to use unit tests:
+
   * open `conf/site.py`
   * set API_KEY and SITE_ID to the values obtained in the previous section
  
