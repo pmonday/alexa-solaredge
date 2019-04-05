@@ -1,0 +1,23 @@
+# Ignore everything
+/*
+
+# Do not ignore the solar-edge skill files
+!.gitignore
+!solar_edge.py
+!setup.py
+!MANIFEST.in
+!README.md
+!BUILD.md
+!DEPLOY.md
+!build_bundle.py
+!LICENSE.txt
+
+# Do not ignore the models and controllers
+!/conf
+!/docs
+!/model
+!/solaredge
+!/test
+!/util
+
+

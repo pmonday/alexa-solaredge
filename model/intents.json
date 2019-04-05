@@ -1,0 +1,62 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "solar edge",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "DailyEnergyIntent",
+                    "slots": [
+                        {
+                            "name": "Day",
+                            "type": "AMAZON.DATE"
+                        }
+                    ],
+                    "samples": [
+                        "about {Day}",
+                        "How much solar power was produced {Day}",
+                        "Power on {Day}",
+                        "How much solar power was produced on {Day}",
+                        "How Much Energy on {Day}"
+                    ]
+                },
+                {
+                    "name": "TodayEnergyIntent",
+                    "slots": [],
+                    "samples": [
+                        "about today",
+                        "Tell me my solar output today",
+                        "How much power",
+                        "Today",
+                        "How much energy today"
+                    ]
+                },
+                {
+                    "name": "MonthEnergyIntent",
+                    "slots": [],
+                    "samples": [
+                        "about this month",
+                        "Solar power this month",
+                        "How much energy this month"
+                    ]
+                }
+            ],
+            "types": []
+        }
+    }
+}

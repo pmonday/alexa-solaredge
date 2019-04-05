@@ -1,0 +1,5 @@
+Install the dependencies into the root directory
+
+- pip install ask-sdk -t .
+- pip install requests -t .
+- pip install pytz -t .
