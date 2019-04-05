@@ -11,7 +11,7 @@ this, here are the obvious locations for improvement:
 To set up this project:
 * clone the repository to a directory: `git clone <repo> solar`
 * install the dependencies
-  * `cd solar` (or whatever directory you cloned the repository into) 
+  * `cd alexa-solaredge` (or whatever directory you cloned the repository into) 
   * `pip install pytz -t .`
   * `pip install requests -t .`
   * `pip install ask-sdk -t .`

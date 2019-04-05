@@ -216,7 +216,6 @@ class LifetimeEnergyIntentHandler(AbstractRequestHandler):
 
     def handle(self, handler_input):
         # No slots
-
         # Get the Site Information, this contains the month information
         site_information = SiteInformation(os.environ['SITE_ID'],
                                            os.environ['API_KEY'])
@@ -228,8 +227,6 @@ class LifetimeEnergyIntentHandler(AbstractRequestHandler):
                 .set_should_end_session(
                 True)
             return handler_input.response_builder.response
-
-
         env_information = EnvironmentalInformation(os.environ['SITE_ID'],
                                                    os.environ['API_KEY'])
         r = env_information.refresh()
