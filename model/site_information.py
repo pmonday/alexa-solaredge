@@ -65,6 +65,12 @@ class SiteInformation:
         return self._overview["overview"]["lastYearData"]["energy"]
 
     @property
+    def lifetime_data(self):
+        if self._overview is None:
+            return None
+        return self._overview["overview"]["lifeTimeData"]["energy"]
+
+    @property
     def overview(self):
         return self._overview
 

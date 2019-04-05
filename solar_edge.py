@@ -32,6 +32,8 @@ import model.speech_error as se
 import pytz
 import os
 from model.site_information import SiteInformation
+from model.environmental_benefits import EnvironmentalInformation
+
 
 sb = SkillBuilder()
 
@@ -207,6 +209,59 @@ class MonthEnergyIntentHandler(AbstractRequestHandler):
             True)
         return handler_input.response_builder.response
 
+class LifetimeEnergyIntentHandler(AbstractRequestHandler):
+    # Handler for determining lifetime energy output
+    def can_handle(self, handler_input):
+        return is_intent_name("LifetimeEnergyIntent")(handler_input)
+
+    def handle(self, handler_input):
+        # No slots
+
+        # Get the Site Information, this contains the month information
+        site_information = SiteInformation(os.environ['SITE_ID'],
+                                           os.environ['API_KEY'])
+        r = site_information.refresh()
+        if r <= 0:
+            speech_text = _process_error(r, "lifetime")
+            handler_input.response_builder.speak(speech_text).set_card(
+                SimpleCard("SolarEdge Energy Production", speech_text)) \
+                .set_should_end_session(
+                True)
+            return handler_input.response_builder.response
+
+
+        env_information = EnvironmentalInformation(os.environ['SITE_ID'],
+                                                   os.environ['API_KEY'])
+        r = env_information.refresh()
+        if r <= 0:
+            speech_text = _process_error(r, "environmental information")
+            handler_input.response_builder.speak(speech_text).set_card(
+                SimpleCard("SolarEdge Energy Production", speech_text)) \
+                .set_should_end_session(
+                True)
+            return handler_input.response_builder.response
+
+        watt_hours = site_information.lifetime_data
+
+        if watt_hours == -1:
+            speech_text = speech.NO_REPORTED_LIFETIME_ENERGY_TEXT
+        elif watt_hours >= 0:
+            kilowatt_hours = cnv.wh_to_kwh(watt_hours)
+            speech_text = speech.LIFETIME_ENERGY_TEXT.format(
+                kw=kilowatt_hours,
+                c=env_information.co2,
+                l=env_information.lightbulbs,
+                t=env_information.trees
+            )
+        else:
+            speech_text = _process_error(watt_hours, " lifetime ")
+
+        handler_input.response_builder.speak(speech_text).set_card(
+            SimpleCard("SolarEdge Energy Production", speech_text))\
+            .set_should_end_session(
+            True)
+        return handler_input.response_builder.response
+
 
 def _process_error(error_code, day_as_text):
     """
@@ -302,6 +357,7 @@ sb.add_request_handler(LaunchRequestHandler())
 sb.add_request_handler(TodayEnergyIntentHandler())
 sb.add_request_handler(DailyEnergyIntentHandler())
 sb.add_request_handler(MonthEnergyIntentHandler())
+sb.add_request_handler(LifetimeEnergyIntentHandler())
 sb.add_request_handler(HelpIntentHandler())
 sb.add_request_handler(CancelOrStopIntentHandler())
 sb.add_request_handler(FallbackIntentHandler())

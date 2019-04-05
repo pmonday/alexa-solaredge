@@ -54,6 +54,15 @@
                         "Solar power this month",
                         "How much energy this month"
                     ]
+                },
+                {
+                    "name": "LifetimeEnergyIntent",
+                    "slots": [],
+                    "samples": [
+                        "about lifetime production",
+                        "about lifetime",
+                        "how much energy"
+                    ]
                 }
             ],
             "types": []

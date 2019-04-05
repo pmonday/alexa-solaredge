@@ -26,6 +26,14 @@ NO_REPORTED_MONTHLY_ENERGY_TEXT = "Your solar system has not produced any " \
                                   "energy this month as reported by the " \
                                   "Solar Edge Portal"
 
+LIFETIME_ENERGY_TEXT = "Your solar system produced {kw} Kilowatt Hours in its" \
+                       " life, saving {t} trees, as much as {l} lightbulbs" \
+                       " and {c} pounds of carbon dioxide."
+
+NO_REPORTED_LIFETIME_ENERGY_TEXT = "Your solar system has not produced any " \
+                                   "energy over its life as reported by the " \
+                                   "Solar Edge Portal"
+
 TODAY_ENERGY_TEXT = "Your solar system produced {kw} Kilowatt Hours and was " \
                     "producing {cp} Kilowatts the" \
                     " last time the Solar Edge inverter reported at {lr}."
