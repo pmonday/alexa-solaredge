@@ -1,5 +1,5 @@
-#DEPLOY
-
+DEPLOY
+-------
 This file contains information about how to deploy the package
 that you previously built in [PACKAGE](PACKAGE.md).
 
@@ -17,7 +17,7 @@ installed. Also, take a few minutes and read:
 * [Host a Custom Skill as an AWS Lambda Function](https://developer.amazon.com/docs/custom-skills/host-a-custom-skill-as-an-aws-lambda-function.html)
 
 
-##SolarEdge Information
+## SolarEdge Information
 
 You will need an API key and your Site ID from the 
 [SolarEdge Monitoring Portal](https://monitoring.solaredge.com/solaredge-web/p/login?locale=en_US).
@@ -33,7 +33,7 @@ Log into the monitoring portal using your credentials then:
 in the project
 
 
-##Deploy to Lambda
+## Deploy to Lambda
 It should be noted that the console experience changes frequently and these
 instructions should be used as a guideline, not as a fact.
 
@@ -78,7 +78,7 @@ Once created, record the ARN at the top right of the page, it
 looks something like this (where number is filled in):
 `arn:aws:lambda:us-west-2:<number>:function:SolarEdge`.
 
-##Create an Alexa Skill
+## Create an Alexa Skill
 
 It should be noted that the console experience changes frequently and these
 instructions should be used as a guideline, not as a fact.

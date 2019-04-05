@@ -1,12 +1,12 @@
-#BUILD
-
+BUILD
+------
 This file contains information about what to do once you have
 the core files downloaded from github. I don't mind feedback on 
 this, here are the obvious locations for improvement:
 
 * Reorganization - Use a venv environment instead of flat structure
 
-##Setup Environment
+## Setup Environment
 
 To set up this project:
 * clone the repository to a directory: `git clone <repo> solar`
@@ -23,7 +23,7 @@ To set up this project:
 Do *not* check your API Key and Site ID into the git project
 by accident after your site.py file is modified.
 
-##Package
+## Package
 From *within* the solar edge skill directory (we need a flat directory
 with the skill at the root) call the following:
 `./build_bundle.py`
