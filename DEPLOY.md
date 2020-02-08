@@ -62,7 +62,7 @@ that it is available in.
   * Upload the .zip file created in the last step
 1. You *must* add the following in the Environment Variables section
   * API_KEY <your SolarEdge API Key)
-  * SIDE_ID <your SolarEdge Site ID)
+  * SITE_ID <your SolarEdge Site ID)
 1. You *should* adjust the "Basic Settings" -> Timeout to around 7 seconds,
 some handlers use 2 to 3 calls to the SolarEdge portal
 
